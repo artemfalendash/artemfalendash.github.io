@@ -2,7 +2,7 @@
 :root {
   --bg: #121110; --surface: #1b1a18; --surface2: #23211e; --text: #f1ece4; --muted: #a39b8f;
   --line: #2f2c28; --accent: #e9a23b;
-  --serif: "Source Serif 4", Georgia, serif; --sans: "Inter", system-ui, sans-serif;
+  --serif: "Source Serif 4", Georgia, serif; --sans: "Fraunces", Georgia, serif;
 }
 * { box-sizing: border-box; }
 body { margin: 0; color: var(--text); font: 19px/1.65 var(--serif);
@@ -48,3 +48,10 @@ h1 { font-weight: 600; font-size: clamp(46px, 7.5vw, 104px); line-height: 1; let
   .what, .project, .contact { grid-column: 1 / -1; grid-row: auto; }
   .tile { padding: 26px; border-radius: 18px; }
 }
+
+/* ---------- Fonts ---------- */
+/* Main text */
+.grid p:not(.label) { font-family: "Literata", Georgia, serif; font-size: 17.5px; }
+.what p:not(.label) { font-size: 19.5px; }
+/* The two big headings: italic, like "Automatyzacja" */
+.project h3, .contact h2 { font-family: "Fraunces", Georgia, serif; font-weight: 500; font-style: italic; letter-spacing: -0.01em; }
