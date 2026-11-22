@@ -1,50 +1,52 @@
 <!doctype html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Artem Falendash · Automatyzacja codziennej pracy w firmie</title>
-  <meta name="description" content="Łączę ze sobą programy i narzędzia, z których korzysta Twoja firma, tak żeby informacje same trafiały tam, gdzie trzeba.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#121110">
+<meta name="description" content="Łączę ze sobą programy i narzędzia, z których korzysta Twoja firma, tak żeby informacje same trafiały tam, gdzie trzeba.">
+<title>Artem Falendash · Automatyzacja codziennej pracy w firmie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600&display=swap">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-
-    <header class="hero">
-      <img class="photo" src="photo.jpg" alt="Artem Falendash" width="160" height="160">
+<div class="wrap">
+  <header class="hero">
+    <img class="photo" src="photo.jpg" alt="Artem Falendash">
+    <div>
       <h1>Artem Falendash</h1>
-      <p class="tagline">Automatyzacja codziennej pracy w firmie</p>
-    </header>
+      <p class="tagline"><em>Automatyzacja</em> codziennej pracy w firmie</p>
+    </div>
+  </header>
 
-    <section>
-      <h2>Czym się zajmuję</h2>
+  <main class="grid">
+    <section class="tile what">
+      <p class="label">Czym się zajmuję</p>
       <p>Łączę ze sobą programy i narzędzia, z których korzysta Twoja firma, tak żeby informacje same trafiały tam, gdzie trzeba. Mniej ręcznego przepisywania danych i pilnowania wszystkiego na głowie — więcej czasu na samą pracę.</p>
     </section>
 
-    <section>
-      <h2>Przykład mojej pracy</h2>
-      <article class="card">
-        <h3>Webhook Delivery Engine</h3>
-        <p>Projekt, który zbudowałem od zera. Pokazuje w praktyce to, czym się zajmuję: przekazywanie informacji między programami tak, żeby nic nie ginęło.</p>
-        <p>Gdy w jednym programie coś się wydarzy — na przykład klient opłaci zamówienie — serwis od razu powiadamia wszystkie inne programy, które powinny o tym wiedzieć. Jeśli któryś z nich akurat nie działa, serwis próbuje ponownie. Żadna informacja nie ginie, a każda wiadomość jest podpisana, więc odbiorca wie, że jest prawdziwa.</p>
-        <p class="tech">Technologie: Python, FastAPI, PostgreSQL, Redis, Docker</p>
-        <a class="link" href="https://github.com/artemfalendash/webhook-delivery-engine" target="_blank" rel="noopener">→ Kod na GitHubie</a>
-      </article>
+    <section class="tile project">
+      <p class="label">Przykład mojej pracy</p>
+      <h3>Webhook Delivery Engine</h3>
+      <p>Projekt, który zbudowałem od zera. Pokazuje w praktyce to, czym się zajmuję: przekazywanie informacji między programami tak, żeby nic nie ginęło.</p>
+      <p>Gdy w jednym programie coś się wydarzy — na przykład klient opłaci zamówienie — serwis od razu powiadamia wszystkie inne programy, które powinny o tym wiedzieć. Jeśli któryś z nich akurat nie działa, serwis próbuje ponownie. Żadna informacja nie ginie, a każda wiadomość jest podpisana, więc odbiorca wie, że jest prawdziwa.</p>
+      <ul class="chips"><li class="k">Technologie:</li><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>Redis</li><li>Docker</li></ul>
+      <a class="btn" href="https://github.com/artemfalendash/webhook-delivery-engine" target="_blank" rel="noopener">→ Kod na GitHubie</a>
     </section>
 
-    <section>
+    <section class="tile contact" id="kontakt">
       <h2>Kontakt</h2>
       <p>Napisz lub zadzwoń — chętnie porozmawiam o Twojej firmie.</p>
-      <p class="contact">
-        <a class="button" href="mailto:art.falendash@gmail.com">art.falendash@gmail.com</a>
-        <span class="sep" aria-hidden="true">·</span>
-        <a class="button" href="tel:+48508969390">508 969 390</a>
-      </p>
+      <div class="links">
+        <a class="btn" href="mailto:art.falendash@gmail.com">art.falendash@gmail.com</a>
+        <span class="sep">·</span>
+        <a class="btn" href="tel:+48508969390">508 969 390</a>
+      </div>
     </section>
-
   </main>
+</div>
 </body>
 </html>

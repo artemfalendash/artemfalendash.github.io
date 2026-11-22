@@ -1,141 +1,50 @@
-/* Colors in one place. The second block switches to dark colors when the phone is in dark mode. */
+:root { color-scheme: dark; }
 :root {
-  --bg: #f7f6f3;
-  --surface: #ffffff;
-  --text: #1f2328;
-  --muted: #5c6370;
-  --line: #e4e1da;
-  --accent: #1f6f66;
-  --accent-soft: #e6f0ee;
+  --bg: #121110; --surface: #1b1a18; --surface2: #23211e; --text: #f1ece4; --muted: #a39b8f;
+  --line: #2f2c28; --accent: #e9a23b;
+  --serif: "Source Serif 4", Georgia, serif; --sans: "Inter", system-ui, sans-serif;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #16181b;
-    --surface: #1e2125;
-    --text: #e8e6e3;
-    --muted: #a3a8b0;
-    --line: #2e3238;
-    --accent: #6cc3b6;
-    --accent-soft: #1f2e2c;
-  }
-}
-
 * { box-sizing: border-box; }
+body { margin: 0; color: var(--text); font: 19px/1.65 var(--serif);
+       background: radial-gradient(900px 500px at 85% -10%, rgba(233,162,59,.16), transparent 60%), var(--bg); background-attachment: fixed; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px 48px; }
 
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
-  font-size: 18px;
-  line-height: 1.6;
-  -webkit-text-size-adjust: 100%;
-}
+.hero { display: grid; grid-template-columns: auto 1fr; gap: 56px; align-items: center; padding: 96px 0 72px; }
+.photo { width: 260px; aspect-ratio: 1; border-radius: 50%; object-fit: cover; display: block;
+         box-shadow: 0 0 0 6px var(--bg), 0 0 0 8px var(--accent), 0 30px 80px -10px rgba(233,162,59,.35); }
+h1 { font-weight: 600; font-size: clamp(46px, 7.5vw, 104px); line-height: 1; letter-spacing: -0.03em; margin: 0 0 18px; }
+.tagline { margin: 0; font-size: clamp(20px, 2.4vw, 30px); color: var(--muted); }
+.tagline em { color: var(--accent); font-style: italic; }
 
-/* One narrow column: easy to read on a phone, doesn't stretch on a big screen. */
-main {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 48px 20px 64px;
-}
+.grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 36px; }
+.what { grid-column: span 5; }
+.project { grid-column: span 7; grid-row: span 2; background: linear-gradient(160deg, var(--surface2), var(--surface)); }
+.contact { grid-column: span 5; background: var(--accent); color: #1a1408; border: none; }
 
-/* ---------- Top: photo, name, tagline ---------- */
-.hero {
-  text-align: center;
-  padding-bottom: 32px;
-  border-bottom: 1px solid var(--line);
-}
+.label { font: 600 12px var(--sans); text-transform: uppercase; letter-spacing: .14em; color: var(--accent); margin: 0 0 18px; }
+.what p:not(.label) { margin: 0; font-size: 21px; line-height: 1.55; }
+.project h3 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.015em; margin: 0 0 20px; }
+.project p { margin: 0 0 16px; color: #d9d2c7; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 26px 0 30px; }
+.chips li { font: 500 13px var(--sans); padding: 7px 13px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); }
+.chips .k { border: none; background: none; padding-left: 0; color: var(--muted); }
+.btn { display: inline-block; font: 600 15px var(--sans); text-decoration: none; padding: 14px 22px; border-radius: 12px; }
+.project .btn { background: var(--text); color: var(--bg); }
+.project .btn:hover { background: var(--accent); }
 
-.photo {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid var(--surface);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-  background: var(--line);
-}
+.contact .label { color: #1a1408; opacity: .65; }
+.contact h2 { font-size: clamp(38px, 4.5vw, 56px); line-height: 1; margin: 0 0 14px; letter-spacing: -0.02em; }
+.contact p { margin: 0 0 26px; font-size: 20px; }
+.contact .links { display: flex; flex-direction: column; gap: 10px; }
+.contact .btn { background: #1a1408; color: var(--accent); text-align: center; font-size: 16px; }
+.contact .btn:hover { background: #000; }
+.sep { display: none; }
 
-h1 {
-  margin: 20px 0 4px;
-  font-size: 30px;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-}
-
-.tagline {
-  margin: 0;
-  color: var(--muted);
-  font-size: 18px;
-}
-
-/* ---------- Sections ---------- */
-section { margin-top: 40px; }
-
-h2 {
-  margin: 0 0 12px;
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-}
-
-p { margin: 0 0 14px; }
-
-/* ---------- Project card ---------- */
-.card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 22px 22px 20px;
-}
-
-h3 {
-  margin: 0 0 10px;
-  font-size: 20px;
-  line-height: 1.3;
-}
-
-.tech {
-  color: var(--muted);
-  font-size: 15px;
-}
-
-.link {
-  color: var(--accent);
-  font-weight: 600;
-  text-decoration: none;
-}
-.link:hover { text-decoration: underline; }
-
-/* ---------- Contact: big, easy-to-tap buttons ---------- */
-.contact {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 12px;
-}
-
-.button {
-  display: inline-block;
-  padding: 12px 18px;
-  border-radius: 10px;
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-weight: 600;
-  text-decoration: none;
-  word-break: break-word;
-}
-.button:hover { filter: brightness(0.97); }
-
-.sep { color: var(--muted); }
-
-/* On narrow phones: buttons go full width, one under the other, and the dot disappears. */
-@media (max-width: 480px) {
-  main { padding-top: 36px; }
-  .contact { flex-direction: column; align-items: stretch; }
-  .button { text-align: center; }
-  .sep { display: none; }
+@media (max-width: 900px) {
+  body { font-size: 18px; }
+  .hero { grid-template-columns: 1fr; text-align: center; gap: 32px; padding: 56px 0 48px; }
+  .photo { width: 200px; margin: 0 auto; }
+  .what, .project, .contact { grid-column: 1 / -1; grid-row: auto; }
+  .tile { padding: 26px; border-radius: 18px; }
 }
